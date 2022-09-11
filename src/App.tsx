@@ -54,6 +54,7 @@ export default function App() {
       <Usecontext />
       <Input />
       <Memo doSomething={doSomething} />
+      {/* @ts-ignore */}
       <Redux />
     </>
   )
