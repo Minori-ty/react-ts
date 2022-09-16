@@ -1,9 +1,6 @@
-import App from '../App'
-import Home from '../pages/Home'
 import About from '../pages/About'
-import User from '../pages/User'
 import NotFound from '../pages/NotFound'
-import { BrowserRouter, Routes, Route, RouteObject } from 'react-router-dom'
+import { RouteObject } from 'react-router-dom'
 import Auth from '@/utils/Auth'
 import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom'
 import { history } from '../router/history'
@@ -32,6 +29,11 @@ import Layout from '../layout'
 
 // export default BaseRoute
 
+const Home = lazy(() => import('../pages/Home'))
+// const Login = lazy(() => import('../pages/Login'))
+const User = lazy(() => import('../pages/User'))
+const UserDetail = lazy(() => import('../pages/userDetail'))
+
 function lazyLoad(children: ReactNode): ReactNode {
   return <Suspense fallback={<Spin />}>{children}</Suspense>
 }
@@ -51,7 +53,7 @@ const router: RouteObject[] = [
       },
       {
         path: '/user/:id',
-        element: lazyLoad(<User />),
+        element: lazyLoad(<UserDetail />),
       },
     ],
   },
