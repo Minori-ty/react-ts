@@ -110,7 +110,6 @@ function App() {
               minHeight: 280,
             }}>
             <Outlet />
-            <Outlet />
             <button
               onClick={ToHome}
               className="rounded-lg  bg-blue-500 p-2 text-white">
