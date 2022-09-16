@@ -5,11 +5,15 @@ import { Provider } from 'react-redux'
 import store from './store'
 import Router from './router'
 import './assets/css/tailwind.css'
+import 'antd/dist/antd.css'
+import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 )
